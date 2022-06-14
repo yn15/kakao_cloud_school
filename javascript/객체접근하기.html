@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="header1" onclick="alert('눌림')">이 부분의 텍스트를 바꿔봅시다.</h1>
+    <h1 id="header1">이 경우에는 어떻게 될까</h1>
+    <h1 id="header3">이벤트발생</h1>
+</body>
+</html>
+<script>
+    var h1 = document.getElementsByTagName("h1");
+    // console.log(h1);
+    console.log(h1[0].innerHTML);
+    h1[0].innerHTML="자바스크립트";
+    h1[1].innerHTML="배열처리가능";
+
+    h1 = document.querySelector("#header1");
+    console.log(h1.innerHTML);
+
+    h1 = document.getElementById("header1");
+    console.log(h1.innerHTML);
+
+    h1.style.color = "red";
+
+    var header3 = document.getElementById("header3");
+    //함수의 표현식, onclick이벤트가 발생했을때 호출할 콜백함수를 전달한다.
+    // header3.onclick = function(){
+    //     alert("클릭 이벤트 발생");
+    // }
+
+    header3.onclick = () => alert("클릭 이벤트 발생");
+
+    var add = (x,y) => x+y;
+    console.log(add(4, 5));
+
+    var arr = [1, 2, 3, 4, 5, 6, 7, 8, 10];
+
+    var even=[];
+    var odd=[];
+
+    for(i=0; i<arr.length; i++){
+        if(arr[i]%2==0) even.push(arr[i]);
+        else odd.push(arr[i]);
+    }
+
+    console.log(even);
+    console.log(odd);
+
+    //람다
+    console.log(arr.filter(x=>x%2==0));
+    console.log(arr.filter(x=>x%2==1));
+
+    arr.forEach(x=>console.log(x));                                                                                                                                                                                                                               
+</script>
