@@ -1,0 +1,12 @@
+body{
+    background-color: antiquewhite;
+    font-size: 12pt;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px;
+    color: blue;
+}
+
+h1{
+    color: grey;
+    padding: 10px;
+}
