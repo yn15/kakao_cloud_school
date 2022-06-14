@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--페이지 하나에는 폼태그가 하나만 있는 것이 좋음-->
+    <!-- action을 지정하지 않읒면 자기 문서를 또 부른다 -->
+    <!-- id태그는 스크립트 상에서 제어하기 위해 사용 -->
+    <!-- name 태그는 intput, textarea, select에서만 사용가능하며 서버로 전송됨 -->
+    <!-- &name속성=값속성&name속성2=값속성2&name속성3=값속성3-->
+    <form action="" method="get">
+        <fieldset>
+            <label for="userid">아이디
+                <input type="text" name="userid" size="10">
+            </label>
+
+            <label for="password">패스워드
+                <input type="text" name="password" size="10">
+            </label>
+            
+            <input type="submit" value="로그온">
+            <button>로그온</button>
+
+            <!--이 두개는 서버로 정보를 전송하지 않음, 단순 이벤트 발생-->
+            <input type="button" value="버튼"> 
+            <button type="button">버튼</button>
+            
+        </fieldset>
+
+        <fieldset style="margin-top: 30px;">
+            <legend>배송정보</legend>
+            <ul>
+                <li>
+                    <label for="username">이름
+                        <input type="text" name="username" id="username">
+                    </label>
+                </li>
+                <li>
+                    <label for="username">배송주소
+                        <input type="text" name="address" id="address">
+                    </label>
+                </li>
+                <li>
+                    <label for="username">이메일
+                        <input type="text" name="email" id="email">
+                    </label>
+                </li>
+                <li>
+                    <label for="username">연락처
+                        <input type="text" name="phonenumber" id="phonenumber">
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+
+
+        <!-- label이름과 id이름이 같아야함 -->
+        <!-- 서로 다른 이름을 같고있다면 input의 텍스를 누를시 다른 곳에서 이벤트 발생-->4
+        <!-- 체크박스 여러개 누르고 전송시 서버에서 배열로 처리 되도록 해야함 -->
+        <fieldset style="margin-top: 30px;">
+            <legend>상품 선택</legend>
+            <p>주문할 상품을 선택해 주세요.</p>
+            <label for="check1">
+                <input type="checkbox" value="m1" name="product" id="check1">선물용 3kg
+            </label>
+            <label for="check2">
+                <input type="checkbox" value="m2" name="product" id="check2">선물용 5kg
+            </label>
+            <label for="check3">
+                <input type="checkbox" value="m3" name="product" id="check3">가정용 3kg
+            </label>
+            <label for="check4">
+                <input type="checkbox" value="m4" name="product" id="check4">가정용 5kg
+            </label>
+
+            <p>포장 선택</p>
+            <label for="radio1">
+                <input type="radio" value="yes" name="gift" checked id="radio1"> 선물 포장
+            </label>
+            <label for="radio2">
+                <input type="radio" value="no" name="gift" checked id="radio2"> 선물 포장
+            </label>
+            
+            
+        </fieldset>
+    </form>
+</body>
+</html>

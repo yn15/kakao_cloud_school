@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <caption>상품구성</caption>
+        <thead>
+            <tr>
+                <th>용도</th>
+                <th>중량</th>
+                <th>개수</th>
+                <th>가격</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">선물용</td>
+                <td>3kg</td>
+                <td>11~16과</td>
+                <td>3,5000원</td>
+            </tr>
+            <tr>
+                <!-- <td>선물용</td> -->
+                <td>3kg</td>
+                <td>11~16과</td>
+                <td>3,5000원</td>
+            </tr>
+            <tr>
+                <td rowspan="2">선물용</td>
+                <td>3kg</td>
+                <td>11~16과</td>
+                <td>3,5000원</td>
+            </tr>
+            <tr>
+                <!-- <td>선물용</td> -->
+                <td>3kg</td>
+                <td>11~16과</td>
+                <td>3,5000원</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>열합치기</h3>
+    <table style="border:1px solid blue; width:50%">
+        <tr>
+            <th>1열</th>
+            <th>2열</th>
+            <th>3열</th>
+            <th>4열</th>
+        </tr>
+        <tr>
+            <td style="border:1px solid blue;" colspan="3">3칸합침</td>
+            <td style="border:1px solid blue;">1칸</td>
+        </tr>
+        <tr>
+            <td style="border:1px solid blue;">1</td>
+            <td style="border:1px solid blue;">2</td>
+            <td style="border:1px solid blue;">3</td>
+            <td style="border:1px solid blue;">4</td>
+        </tr>
+        <tr>
+            <td style="border:1px solid blue;" colspan="2">1</td>
+            <td style="border:1px solid blue;" colspan="2">3</td>
+        </tr>
+    </table>
+</body>
+</html>

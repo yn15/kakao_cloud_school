@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        label{
+            width: 300px;
+            height: 100px;
+        }
+     </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>배송정보</legend>
+            <label for="username">이름</label>
+            <input type="text" name="username" id="username" placeholder="이름을 입력하세요" required> <br>
+            <label for="username">배송주소</label>
+            <input type="text" name="address" id="address" placeholder="주소를 입력하세요" required> <br>
+            <label for="email">이메일</label>
+            <input type="email" name="email" id="email" placeholder="이메일을 입력하세요"> <br>
+            <label for="phone">연락처</label>
+            <input type="tel" name="phone" id="phone" placeholder="하이픈을 빼고 숫자만 입력해주세요(01012345678)"> <br>
+            <label for="orderDate">배송지정</label>
+            <input type="date" name="orderDate" id="orderDate">
+            
+            (주문일로부터 최소 3일 이후)
+            <br>
+            <label for="contents">주의사항</label><br>
+            <textarea name="contents" id="contents" cols="60" rows="10"></textarea>
+            <br>
+            <select name="kind" id="kind">
+                <option value="1">선물용 3kg</option>
+                <option value="2" selected>선물용 10kg</option>
+                <option value="3">가정용 3kg</option>
+                <option value="4">가정용 10kg</option>
+            </select>
+            <button>보내기</button>
+        </fieldset>
+    </form>
+</body>
+</html>
