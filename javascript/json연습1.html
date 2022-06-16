@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let person = {"name":"홍길동", "age":18};
+    console.log(person["name"]);
+    console.log(person["age"]);
+    console.log(person.name);
+    console.log(person.age);
+
+    person.address = "서울시";
+    person["phone"] = "010-0000-0000";
+
+    console.log(person);
+
+    //json배열
+    let personList = [
+        {"name":"홍길동", "age":23, "phone":"010-0000-1234","address":"신림동"},
+        {"name":"임꺽정", "age":33, "phone":"010-0000-5425","address":"신길동"},
+        {"name":"정발산", "age":25, "phone":"010-0000-3463","address":"잠실동"},
+        {"name":"슭곰발", "age":27, "phone":"010-0000-4688","address":"서초동"},
+        {"name":"발가락", "age":12, "phone":"010-0000-8974","address":"대림동"}
+    ];
+
+    for(i=0; i<personList.length; i++){
+        console.log(`${personList[i].name} ${personList[i].age} ${personList[i].address}`);
+    }
+
+    for(i in personList){
+        console.log(`${personList[i].name} ${personList[i].age} ${personList[i].address}`);
+    }
+
+    for(i of personList){
+        console.log(`${i.name} ${i.age} ${i.address}`);
+    }
+
+    personList.forEach((item, index) => console.log(`${item.name} ${item.age} ${item.address}`));
+</script>

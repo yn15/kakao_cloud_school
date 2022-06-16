@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let flowers=["작약", "백일홍", "접시꽃", "천일홍", "목단", "진달래", "장미"];
+    for(i = 0; i<flowers.length; i++)
+        console.log(flowers[i]);
+
+    for(i in flowers)
+        console.log(i, flowers[i]);
+
+    for(item of flowers)
+        console.log(item);
+
+    //호출된 함수를 전달하면 그 함수를 배열의 요소마다 호출해준다.
+    flowers.forEach((x) => console.log(x));
+</script>
