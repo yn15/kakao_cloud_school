@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 하위 선택자 */
+    /* section p {color: blue;} */
+
+    /* 자식 선택자*/
+    section > div > p{color: blue;}
+
+    /* 인접 형제 선택자 */
+    h1 + p{color: red;}
+
+    /* 형제 선택자 */
+    h1 ~ p{color: blueviolet;}
+</style>
+<body>
+    <section>
+        <p>자식요소</p>
+        <div>
+            <p>손주요소</p>
+        </div>
+        <h1>형제찾기</h1>
+        <p>h1의 형제</p>
+        <p>형제 아님</p>
+    </section>
+</body>
+</html>

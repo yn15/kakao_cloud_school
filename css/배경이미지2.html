@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        /* background-image: url('./images/bg2.png');
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-attachment: fixed; */
+        background: url('./images/bg2.png') no-repeat right top fixed;
+        background-origin: content-box;
+        padding-top: 50px;
+    }
+
+    div{
+        width: 400px;
+        height: 200px;
+        padding: 10px;
+        border: 10px solid black;
+        background: url('./images/bg3.png') no-repeat right top;
+    }
+
+    #box1{
+        background-origin: border-box;
+    }
+
+    #box2{
+        background-origin: padding-box;
+    }
+
+    #box3{
+        background-origin: content-box;
+    }
+</style>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+</body>
+</html>
