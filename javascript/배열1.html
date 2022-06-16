@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    let arr = [1, 2, 3, 4, 5];
+    for(i = 6; i<=10; i++) arr.push(i);
+    
+    console.log(arr);
+
+    let words=Array();
+    words.push("Hi");
+    words.push("apple");
+    words.push("berry");
+    words.push("banana");
+
+    console.log(words);
+    console.log(words[0]);
+
+    //시스템적 속도 빠름
+    words = words.concat("milk", "president", "ship", "subway");
+
+    console.log(words);
+
+    let s = words.join(" ");
+    console.log(s);
+
+    words2 = s.split(" ");
+    console.log(words2);
+</script>

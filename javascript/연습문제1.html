@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    값1 : <input type="text" id="xvalue">
+    값2 : <input type="text" id="yvalue">
+    <button type="button" onclick="cul(0)">+</button>
+    <button type="button" onclick="cul(1)">-</button>
+    <button type="button" onclick="cul(2)">*</button>
+    <br>
+    결과 : <span id="result"></span>
+</body>
+</html>
+<script>
+    let getId = document.getElementById("result");
+    function cul(i){
+        let x = parseInt(document.getElementById("xvalue").value);
+        let y = parseInt(document.getElementById("yvalue").value);
+        if(i==0) getId.innerHTML = x+y;
+        else if(i==1) getId.innerHTML = x-y;
+        else if(i==2) getId.innerHTML = x*y;
+    }
+    
+</script>
