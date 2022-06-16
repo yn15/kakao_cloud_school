@@ -36,34 +36,66 @@
       </nav>
 
       <div class="container mt-3" style="padding-top: 50px;">
-        <h2>Hover Rows</h2>
-        <p>The .table-hover class enables a hover state (grey background on mouse over) on table rows:</p>            
+        <h2>Notice</h2>
+        <p>Notice board, use bootstrap</p>            
         <table class="table table-hover">
+          <colgroup>
+            <col width="8%">
+            <col width="*">
+            <col width="12%">
+            <col width="12%">
+            <col width="8%">
+          </colgroup>
           <thead>
-            <tr>
-              <th>Firstname</th>
-              <th>Lastname</th>
-              <th>Email</th>
+            <tr class="table-dark">
+              <th>번호</th>
+              <th>제목</th>
+              <th>작성자</th>
+              <th>작성일</th>
+              <th>조회수</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>John</td>
-              <td>Doe</td>
-              <td>john@example.com</td>
+              <td>1</td>
+              <td>부트스트랩 대해 배워봅시다</td>
+              <td>홍길동</td>
+              <td>2022.06.16</td>
+              <td>34</td>
             </tr>
             <tr>
-              <td>Mary</td>
-              <td>Moe</td>
-              <td>mary@example.com</td>
+              <td>1</td>
+              <td>부트스트랩 대해 배워봅시다</td>
+              <td>홍길동</td>
+              <td>2022.06.16</td>
+              <td>34</td>
             </tr>
             <tr>
-              <td>July</td>
-              <td>Dooley</td>
-              <td>july@example.com</td>
+              <td>1</td>
+              <td>부트스트랩 대해 배워봅시다</td>
+              <td>홍길동</td>
+              <td>2022.06.16</td>
+              <td>34</td>
             </tr>
           </tbody>
         </table>
       </div>
+
+      <div class="container mt-3 ">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled"><a class="page-link" href="#">first</a></li>
+          <li class="page-item"><a class="page-link" href="#">previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">next</a></li>
+          <li class="page-item"><a class="page-link" href="#">last</a></li>
+        </ul>
+      </div>
+
+      <div class="container mt-3 " style="text-align: right;">
+        <button type="button" class="btn btn-dark">글쓰기</button>
+      </div>
+      
 </body>
 </html>
