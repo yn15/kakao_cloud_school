@@ -1,8 +1,30 @@
 # javascript 학습
 
-2022.06.14
-자바스크립트1, 자바스크립트2, 
+## **반복문**
 
-2022.06.15
-객체접근하기, 등호연산자, 디버깅, 배열1, 변수, 연습문제, 윤년, 입출력, 입출력2, 입출력3, 특수타입, 특수타입2, 호이스팅, letTest
-common.js, 외부, 함수1, for문, json연습1, while문
+> 기본 for문
+```javascript
+    for(i = 0; i<flowers.length; i++)
+        console.log(flowers[i]);
+```
+> for...in문
+```javascript
+    for(i in flowers)
+        console.log(i, flowers[i]);
+```
+> for..of문
+```javascript
+    for(item of flowers)
+        console.log(item);
+```
+
+> forEach문
+```javascript
+    flowers.forEach((x) => console.log(x));
+```
+
+------
+## **sapn 태그**
+- HTML 문서에서 인라인 요소(inline-element)들을 하나로 묶을 때 사용
+
+---
