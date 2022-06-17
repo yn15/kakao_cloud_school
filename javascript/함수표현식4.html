@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 과거 방식 -->
+    <button type="button" onclick="goPress()">버튼</button>
+
+    <!-- 현재 방식 -->
+    <button type="button" id="btnPress">버튼2</button>
+</body>
+</html>
+<script>
+    //과거 방식
+    function goPress(){
+        alert("버튼눌림");
+    }
+
+    //현재 방식
+    window.onload = function(){
+        var btnPress = document.getElementById("btnPress");
+        btnPress.addEventListener("click", () => {
+            alert("버튼눌림2");
+        })
+    }
+</script>

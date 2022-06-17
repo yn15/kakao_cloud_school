@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //html문서가 모두 메모리에 로딩 된 후에 발생하는 이벤트
+        //이벤트가 발생했을 때 우리가 만든 함수를 호출해줘라
+
+
+        //함수 선언문 사용할경우
+        // function onLoad() {  
+        //     document.getElementById("xvalue").value=1000;
+        // }
+        // window.onload=onLoad;
+
+        //표현식 사용
+        // window.onload = function(){
+        //     document.getElementById("xvalue").value=100;
+        // }
+
+        //화살표 함수  사용 - 내부에서 this를 사용할 수 없다.
+        window.onload = () =>{
+            document.getElementById("xvalue").value=1000000;
+        }
+        
+    </script>
+</head>
+<body>
+    <input type="text" id="xvalue">
+</body>
+</html>

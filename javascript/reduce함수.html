@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var arr = [9, 2, 8, 5, 7];
+    var sum = 0;
+
+    sum = arr.reduce((pre, curr)=>{
+        console.log(`pre : ${pre}`); //앞선값
+        console.log(`curr : ${curr}`); //현재값
+
+        return pre+curr; //반드시 리턴이 있어야한다.
+    }, 10); //매개변수 첫번째 값의 기본값
+    //});
+    console.log(sum);
+
+
+    //짝수의 개수를 세어보자
+    cnt = arr.reduce((pre, cur)=>{
+        if(cur%2==0)
+            return pre=pre+1;
+        else
+            return pre;
+    }, 0);
+
+    console.log(cnt);
+
+    let words = ["school", "rain", "rainbow", "sales", "marketing"];
+
+    temp = words.reduce((prev, curr) => {
+        return prev + " " + curr;
+    }, "");
+
+    console.log(temp);
+</script>
