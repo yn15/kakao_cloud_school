@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="button1" value="1">버튼1</button> <br>
+    <button type="button" id="button2" value="1">버튼2</button> <br>
+    <button type="button" id="button3" value="1">버튼3</button> <br>
+</body>
+</html>
+<script>
+    window.onload = function(){
+        document.getElementById("button1").addEventListener("click", shareFunction);
+        document.getElementById("button2").addEventListener("click", shareFunction);
+        document.getElementById("button3").addEventListener("click", shareFunction);
+    }
+    //공유를 하려면 함수 표현식은 사용불가
+    function shareFunction(button){
+        console.log(button.target.id);
+        console.log(button.target.value);
+    }
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="myform">
+        <input type="text" name="name" id="id1" value = "10"> <br>
+        <input type="text" name="name" id="id2" value = "10"> <br>
+        <input type="text" name="name" id="id3" value = "10"> <br>
+        <input type="text" name="name" id="id4" value = "10"> <br>
+        <input type="text" name="name" id="id5" value = "10"> <br>
+        <input type="text" name="name" id="id6" value = "10"> <br>
+        <input type="text" name="name" id="id7" value = "10"> <br>
+        <input type="text" name="name" id="id8" value = "10"> <br>
+        <input type="text" name="name" id="id9" value = "10"> <br>
+        <input type="text" name="name" id="id10" value = "10"> <br>
+    </form>
+    ----------------------------------------- <br>
+    <div id="result"></div>
+    <button type="button" onclick="goIdAdd()">합계구하기(Id)</button>
+    <button type="button" onclick="goNameAdd()">합계구하기(Name)</button>
+</body>
+</html>
+<script>
+    let name = document.getElementsByName("name");
+    let sum = 0;
+    function goNameAdd(){
+        sum = 0;
+        for(i = 0; i<name.length; i++){
+            sum += parseInt(name[i].value);
+        }
+
+        // name.forEach(element => {
+        //     sum += parseInt(element.value);
+        // });
+
+        document.getElementById("result").innerHTML = sum;
+    }
+
+    function goIdAdd(){
+        sum = 0;
+        for(i = 1; i<=10; i++){
+            sum += parseInt(document.getElementById("id"+i).value);
+        }
+        document.getElementById("result").innerHTML = `<h3>${sum}</h3>`;
+    }
+
+
+    
+</script>

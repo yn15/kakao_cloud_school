@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name = "myform" action="">
+        name : <input type="text" name="name"><br>
+        age : <input type="text" name="age"><br>
+        phone : <input type="text" name="phone"><br>
+    </form>      
+</body>
+</html>
+<script>
+    //무조건 배열임
+    document.getElementsByName("name")[0].value = "홍길동";
+    document.getElementsByName("age")[0].value = "23";
+    document.getElementsByName("phone")[0].value = "010-0000-0000";
+
+    console.log(document.myform.name.value);
+    console.log(document.myform.age.value);
+    console.log(document.myform.phone.value);
+</script>

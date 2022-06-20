@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="aclass">파랗게</h1>
+    <h1 class="aclass">늪</h1>
+    <h1 class="aclass">톰보이</h1>
+
+    <h1 class="bclass">모나리자</h1>
+    <h1 class="bclass">마도요</h1>
+    <h1 class="bclass">단발머리</h1>
+</body>
+</html>
+<script>
+    var aclass = document.getElementsByClassName("aclass");
+    console.log(aclass); //컬렉션은오 온다
+    console.log("데이터개수 : ", aclass.length);
+
+    aclass[0].style.color="#ff4433";
+    aclass[1].style.color="#345433";
+    aclass[2].style.color="#784433";
+
+    var bclass = document.getElementsByClassName("bclass");
+    let colors = ["#ff0022", "#023468", "#949900"];
+
+    for(i=0; i<bclass.length; i++){
+        bclass[i].style.color=colors[i];
+    }
+
+    //태그이름 접근
+    let h1 = document.getElementsByTagName("h1");
+    for(i = 0; i<h1.length; i++) console.log(h1[i].innerHTML);
+
+    //querySelector id로 접근할 때는 #id, 클래스는 .class명
+    h1 = document.querySelectorAll("h1");
+    for(i=0; i<h1.length; i++)
+        h1[i].style.color = "#000ff0";
+
+    h1 = document.querySelectorAll(".aclass");
+    for(i=0; i<h1.length; i++)
+        h1[i].style.color = "magenta";
+</script>

@@ -16,4 +16,4 @@ user.age=12;
 console.log(user.age);
 
 user = new User();
-console.log(user)
+console.log(user);

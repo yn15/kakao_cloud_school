@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="btnStart">시작</button>
+    <button type="button" id="btnEnd">종료</button>
+    <h1 id="clock"></h1>
+</body>
+</html>
+<script>
+    let timerID = null; //전역변수
+    window.onload=function(){
+        displayClock();
+        document.getElementById("btnStart").addEventListener("click", ()=>{
+            if(timerID==null)
+                timerID = setInterval(displayClock, 1000); //반환값 받기
+            //만들어진 Interval객체 참조를 반환한다
+        })
+
+        document.getElementById("btnEnd").addEventListener("click", ()=>{
+            if(timerID!=null){
+                clearInterval(timerID);
+                timerID = null;
+            }
+                
+            
+        })
+        
+    }
+
+    function displayClock(){
+        var now = new Date();
+        document.getElementById("clock").innerHTML=now.toLocaleTimeString();
+    }
+</script>

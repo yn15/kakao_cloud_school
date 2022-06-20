@@ -18,4 +18,6 @@ let promise = new Promise(function(resolve, reject){
     ()=>{console.log("ending............")}
 );
 
+setTimeout(()=>{console.log("hihihihhihi")},1001);
+
 console.log(promise);

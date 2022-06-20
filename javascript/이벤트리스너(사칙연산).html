@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    값1 : <input type="text" name="value1" id="value1"> <br>
+    값2 : <input type="text" name="value2" id="value2"> <br>
+    <button type="button" id="btnAdd">더하기</button>
+    <button type="button" id="btnSub">빼기</button>
+    <button type="button" id="btnMul">곱하기</button>
+    <button type="button" id="btnDiv">나누기</button>
+    <div id="result"></div>
+        
+</body>
+</html>
+<script>
+    window.onload = function () {
+        let buttons = [
+            document.getElementById("btnAdd"),
+            document.getElementById("btnSub"),
+            document.getElementById("btnMul"),
+            document.getElementById("btnDiv")
+        ];
+
+        for(i = 0; i<buttons.length; i++){
+            buttons[i].addEventListener("click", cul);
+        }
+        
+    }
+
+    function cul(button){
+        let id = button.target.id;
+        let res = document.getElementById("result");
+        let value1 = parseInt(document.getElementById("value1").value);
+        let value2 = parseInt(document.getElementById("value2").value);
+
+        if(id=="btnAdd"){
+            res.innerHTML = `${value1+value2}`;
+        }
+        if(id=="btnSub"){
+            res.innerHTML = `${value1-value2}`;
+        }
+        if(id=="btnMul"){
+            res.innerHTML = `${value1*value2}`;
+        }
+        if(id=="btnDiv"){
+            res.innerHTML = `${value1/value2}`;
+        }
+    }
+
+</script>
