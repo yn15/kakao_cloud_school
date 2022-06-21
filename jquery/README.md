@@ -40,3 +40,24 @@
 ## **문서 작성**
 - ```.html()```으로 문서 입력
 
+## **이벤트**
+- ```javascript
+    $("#btnSend").click(function(){
+                ...
+    })
+  ```
+
+- ```javascript
+    //json형식으로 여러 이벤트 처리
+    $("p").on({
+            mouseenter:function(){
+            $(this).css("background-color", "lightgray");
+            },
+            mouseleave:function(){
+                $(this).css("background-color", "lightblue");
+            },
+            click:function(){
+                $(this).css("background-color", "yellow");
+            }
+        });
+    ```
