@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <p>누르면 사라진다</p>
+    <p>나도</p>
+    <p>너도?</p>
+</body>
+</html>
+<script>
+    // $(document).ready(function(){
+    //     alert("jqeury를 배워봅시다.")
+    // });
+
+    // $(()=>{
+    //     alert("jquery를 배워봅시다3");
+    // });
+
+    $(function () {
+        //alert("jquery를 배워봅시다2");
+        $("p").click(function(){
+            $(this).hide();
+        })
+    });
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <p>첫 번째 p 태그</p>
+    <p>두 번째 p 태그</p>
+
+    <button type="button" id="btnPress">누르세요</button>
+</body>
+</html>
+<script>
+    $(function() {
+        $("#btnPress").click(function(){
+            //$("p:first").hide(); //첫 번째 태그만 감춘다
+            $("p:first").css("color", "#ff0000");
+        })
+    });
+</script>
