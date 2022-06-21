@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <p>여기  <span style="color:red">문장</span>을 읽어봅시다</p>
+    <input type="text" id="input"><br/>
+    <button type="button" id="btnPress"></button>
+</body>
+</html>
+<script>
+    $(()=>{
+        console.log(document.getElementsByTagName("p")[0].innerText);
+        $("#btnPress").click(()=>{
+            console.log($("p").html());
+            console.log($("p").text());
+            console.log($("p").val());
+
+            console.log($("#input").html());
+            console.log($("#input").text());
+            console.log($("#input").val());
+        })
+    })
+</script>

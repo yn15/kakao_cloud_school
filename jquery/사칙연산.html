@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <!-- react 환경 떄문에 태그를 /로 닫아주는 것이 좋음 -->
+    x : <input type="text" id="xvalue"/><br/>
+    y : <input type="text" id="yvalue"/><br/>
+
+    <button type="button" id="btnAdd" class="button">더하기</button>
+    <button type="button" id="btnSub" class="button">빼기</button>
+    <button type="button" id="btnMul" class="button">곱하기</button>
+    <button type="button" id="btnDiv" class="button">나누기</button><br/>
+
+    결과 : <div id="result"></div>
+</body>
+</html>
+<script>
+    $(function () { 
+        // $("#btnAdd").click(()=>{
+        //     var xvalue = parseInt($("#xvalue").val());
+        //     var yvalue = parseInt($("#yvalue").val());
+
+        //     $("#result").html(`${xvalue+yvalue}`);
+        // });
+
+        // $("#btnSub").click(()=>{
+        //     var xvalue = parseInt($("#xvalue").val());
+        //     var yvalue = parseInt($("#yvalue").val());
+
+        //     $("#result").html(`${xvalue-yvalue}`);
+        // });
+
+        // $("#btnMul").click(()=>{
+        //     var xvalue = parseInt($("#xvalue").val());
+        //     var yvalue = parseInt($("#yvalue").val());
+
+        //     $("#result").html(`${xvalue*yvalue}`);
+        // });
+
+        // $("#btnDiv").click(()=>{
+        //     var xvalue = parseInt($("#xvalue").val());
+        //     var yvalue = parseInt($("#yvalue").val());
+
+        //     $("#result").html(`${xvalue/yvalue}`);
+        // });
+
+        $(".button").click((button)=>{
+            var xvalue = parseInt($("#xvalue").val());
+            var yvalue = parseInt($("#yvalue").val());
+            var result = 0;
+            if(button.target.id=="btnAdd"){
+                result = xvalue+yvalue;
+            }else if(button.target.id=="btnSub"){
+                result = xvalue-yvalue;
+            }else if(button.target.id=="btnMul"){
+                result = xvalue*yvalue;
+            }else{
+                result = xvalue/yvalue;
+            }
+            $("#result").html(result);
+        });
+    })
+</script>
