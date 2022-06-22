@@ -28,7 +28,12 @@
 	
     var xhttp = new XMLHttpRequest();
     xhttp.onload = function(){
-        document.getElementById("result").innerHTML = this.responseText;
+    	let data = JSON.parse(this.responseText);
+    	if(data.result == "success")
+    		document.getElementById("result").innerHTML = "값은 : " +data.value + " 입니다.";
+    	else
+    		document.getElementById("result").innerHTML = "에러발생";
+        /* document.getElementById("result").innerHTML = this.responseText; */
     }
     
     function cul(event){

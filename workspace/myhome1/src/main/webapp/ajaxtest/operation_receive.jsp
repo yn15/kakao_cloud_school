@@ -23,4 +23,4 @@
 		res = ""+((double)x/y);
 	}
 %>
-<h1> <%=s%> <%=res%> 입니다. </h1>
+{"result":"success", "value":"<%=res%>"}
