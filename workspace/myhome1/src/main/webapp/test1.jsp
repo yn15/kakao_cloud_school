@@ -7,14 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%	
-	System.out.println("server");
-	String userid = request.getParameter("userid");
-	String password = request.getParameter("password");
-	
-%>
+<%
 
-<%=userid%><br/>
-<%=password%><br/>
+	for(int i = 0; i<10; i++){
+		out.println("<h1> Do it! 자바스크립트 </h1>");
+	}
+
+%>
 </body>
 </html>
