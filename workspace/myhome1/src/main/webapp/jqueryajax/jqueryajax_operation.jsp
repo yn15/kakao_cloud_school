@@ -33,7 +33,6 @@
 				 }
 				 console.log($(this));
 			  })
-			 
 			 .fail((jqXhr, error) => {
 				 console.log(error);
 			 })
