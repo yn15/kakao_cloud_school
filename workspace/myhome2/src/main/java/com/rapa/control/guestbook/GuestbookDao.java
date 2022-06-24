@@ -9,7 +9,7 @@ public class GuestbookDao {
 	public GuestbookDao() {
 		super();
 		for(int i = 1; i<=20; i++) {
-			list.add(new GuestbookDto(1, "제목"+i, "내용"+i, "작성자"+i, "2022006-24"));
+			list.add(new GuestbookDto(i, "제목"+i, "내용"+i, "작성자"+i, "2022006-24"));
 		}
 	}
 	
@@ -19,6 +19,11 @@ public class GuestbookDao {
 	
 	public GuestbookDto getView(int id) {
 		return list.get(id);
+	}
+	
+	void insert(GuestbookDto dto) {
+		dto.setId(list.size()+1);
+		list.add(dto);
 	}
 	
 	
