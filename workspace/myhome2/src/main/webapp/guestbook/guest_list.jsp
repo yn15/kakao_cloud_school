@@ -14,6 +14,8 @@
 <body>
 	<h1>방명록</h1>
 	<div class="container">
+	<form name="form">
+		<input type="hidden" name="cmd" id="cmd"/>
 		<table class="table" id="mytable">
 			<thead class="thead-dark">
 				<th>번호</th>
@@ -25,22 +27,24 @@
 			<tbody id="tbody">
 			</tbody>
 		</table>
-		
-		<p></p>
-		
-		<ul id="bookList">
-			
-		</ul>
+	</form>
 		
 	</div>
 	<% List<GuestbookDto> booklist = (List<GuestbookDto>)request.getAttribute("dataList");
 	%>
+	<button id="btnWrite" type="button">글쓰기</button>
 </body>
 </html>
 <script>
 	$(()=>{
 		init();
-		
+		document.getElementById("btnWrite").addEventListener("click", function(){
+			var frm = document.form;
+			frm.cmd.value="write";
+			frm.action="/myhome2/guest.do";
+			frm.method="get";
+			frm.submit();
+		})
 	})
 	
 	function init(){

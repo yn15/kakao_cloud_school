@@ -14,7 +14,7 @@ import com.rapa.common.CommonUtil;
 @WebServlet("/guest.do")
 public class GuestbookController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    static GuestbookDao dao = new GuestbookDao();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -48,7 +48,7 @@ public class GuestbookController extends HttpServlet {
 	}
 	
 	void doList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		GuestbookDao dao = new GuestbookDao();
+		//GuestbookDao dao = new GuestbookDao();
 		request.setAttribute("dataList", dao.getList());
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/guestbook/guest_list.jsp");
@@ -56,7 +56,7 @@ public class GuestbookController extends HttpServlet {
 	}
 	
 	void doView(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		GuestbookDao dao = new GuestbookDao();
+		//GuestbookDao dao = new GuestbookDao();
 		String id = request.getParameter("id");
 		request.setAttribute("data", dao.getView(Integer.parseInt(id)-1));
 		
@@ -74,12 +74,11 @@ public class GuestbookController extends HttpServlet {
 		dto.setTitle(request.getParameter("title"));
 		dto.setContents(request.getParameter("contents"));
 		dto.setWriter(request.getParameter("writer"));
-		dto.setWdate(request.getParameter("2022-06-24"));
+		dto.setWdate("2022-06-24");
 		
-		GuestbookDao dao = new GuestbookDao();
 		dao.insert(dto);
-		//새로고침시 데이터를 지우고 새로 가져온다.
-		response.sendRedirect("/guest.do?cmd=list");
+		//새로고침시 데이터를 지우고 새로 가져와서 새로 쓴다.
+		response.sendRedirect(request.getContextPath()+"/guest.do?cmd=list");
 		
 	}
 
