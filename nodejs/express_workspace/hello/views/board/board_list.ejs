@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table class="table" id="mytable">
+        <thead class="thead-dark" >
+            <tr align="left" bgcolor="white">
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>날짜</th>
+        </thead>
+        <tbody id="tbody">
+            <%
+            for(i=0; i<boardList.length; i++){%>
+                <tr>
+                    <td><%=boardList[i].id%></td>
+                    <td><a href="/board/view/<%=boardList[i].id%>"><%=boardList[i].title%></a></td>
+                    <td><%=boardList[i].writer%></td>
+                    <td><%=boardList[i].wdate%></td>
+                </tr>
+            <%}%>
+        </tbody>
+    </table>
+
+    <form name="form" action="/board/write">
+        <button id="btnWrite" type="button">글쓰기</button>
+    </form>
+    
+</body>
+</html>
+<script>
+    window.onload = function(){
+        document.getElementById("btnWrite").addEventListener("click", ()=>{
+            var frm = document.form;
+            frm.submit();
+        })
+    }
+</script>
