@@ -42,3 +42,12 @@ http객체보다 훨씬 사용이간편하고 기능도 많은 외부 모듈
      - 보통 호스팅 업체들이 제일 많이 사용
    - xampp 프로그램
      - 아파치서버, php서버, 톸맷, mysql, phpmyadmin 한번에 설치
+   - DBMS오라클 : 시퀀스, MySQL : auto_increment(자동증가)
+   - 쿼리 표준 : ANSI 표준, DBMS내의 함수는 각자 다르게 만든다.
+   - 오라클 nvl -> mysql nvl
+
+insert into board(title, writer, contents, wdate, hit) values('제목1', '홍길동', '내용1', now(), 0);
+insert into board(title, writer, contents, wdate, hit) values('제목2', '장발산', '내용2', now(), 0);
+insert into board(title, writer, contents, wdate, hit) values('제목3', '임꺽정', '내용3', now(), 0);
+insert into board(title, writer, contents, wdate, hit) values('제목4', '슭곰발', '내용4', now(), 0);
+insert into board(title, writer, contents, wdate, hit) values('제목5', '김첨지', '내용5', now(), 0);
