@@ -6,7 +6,7 @@ var logger = require('morgan');
 //세션 처리 - express는 세션을 저장할 위치를 지정해야한다.
 //파일도 가능하고 디비도 가능하다
 //npm install express-session
-
+//npm install session-file-store
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 //파일에 저장해보자
@@ -14,6 +14,7 @@ const FileStore = require('session-file-store')(session);
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var boardRouter = require('./routes/board');
+var memberRouter = require('./routes/member');
 var app = express();
 
 // view engine setup
@@ -36,6 +37,7 @@ app.use(session ({
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/board', boardRouter);
+app.use('/member', memberRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
