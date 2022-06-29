@@ -40,45 +40,50 @@
                 <col width="25%">
                 <col width="*">
             </colgroup>
-        
-            <tbody>
-              <tr>
-                <td>제목</td>
-                <td>
-                    <div class="mb-3" style="margin-top:13px;">
-                        <input type="text" class="form-control" id="title" name="title" 
-                        placeholder="제목을 입력하세요" >
-                    </div>
-                </td>
-              </tr>       
-              <tr>
-                <td>작성자</td>
-                <td>
-                    <div class="mb-3" style="margin-top:13px;">
-                        <input type="text" class="form-control" id="writer" name="writer" 
-                        placeholder="이름을 입력하세요" >
-                    </div>
-                </td>
-              </tr>      
-              <tr>
-                <td>내용</td>
-                <td>
-                    <div class="mb-3" style="margin-top:13px;">
-                      <textarea class="form-control" rows="5" id="contents" name="contents"></textarea>
-                    </div>
-                </td>
-              </tr>          
-            </tbody>
+            <form name="myform" action="/board/save" method="post">
+              <tbody>
+                <tr>
+                  <td>제목</td>
+                  <td>
+                      <div class="mb-3" style="margin-top:13px;">
+                          <input type="text" class="form-control" id="title" name="title" 
+                          placeholder="제목을 입력하세요" >
+                      </div>
+                  </td>
+                </tr>       
+                <tr>
+                  <td>작성자</td>
+                  <td>
+                      <div class="mb-3" style="margin-top:13px;">
+                          <input type="text" class="form-control" id="writer" name="writer" 
+                          placeholder="이름을 입력하세요" >
+                      </div>
+                  </td>
+                </tr>      
+                <tr>
+                  <td>내용</td>
+                  <td>
+                      <div class="mb-3" style="margin-top:13px;">
+                        <textarea class="form-control" rows="5" id="contents" name="contents"></textarea>
+                      </div>
+                  </td>
+                </tr>          
+              </tbody>
+            </form>
           </table>
        
           <div class="container mt-3" style="text-align:right;">
-            <a href="#" class="btn btn-secondary">Link Button</a>
-            <button type="button" class="btn btn-secondary">Button</button>
-            <input type="button" class="btn btn-secondary" value="Input Button">
-            <input type="submit" class="btn btn-secondary" value="Submit Button">
-            <input type="reset" class="btn btn-secondary" value="Reset Button">
+            <button id="btnSubmit" type="button" class="btn btn-secondary">작성 완료</button>
           </div>
           
     </div>
 </body>
 </html>
+<script>
+    window.onload = function(){
+        document.getElementById("btnSubmit").addEventListener("click", ()=>{
+            var frm = document.myform;
+            frm.submit();
+        })
+    }
+</script>

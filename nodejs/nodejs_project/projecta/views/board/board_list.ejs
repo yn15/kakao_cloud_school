@@ -66,53 +66,25 @@
         <table class="table table-hover ">
             <thead class="table-secondary">
               <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Email</th>
+                <th>id</th>
+                <th>title</th>
+                <th>writer</th>
+                <th>wdate</th>
+                <th>hit</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>john@example.com</td>
+                <%for(i=0; i<data.length; i++){%>
+                  <tr>
+                    <td><%=data[i].id%></td>
+                    <td><a href="/board/view/<%=data[i].id%>"><%=data[i].title%></a></td>
+                    <td><%=data[i].writer%></td>
+                    <td><%=data[i].wdate%></td>
+                    <td><%=data[i].hit%></td>
+                  </tr>
+                <%}%>
               </tr>
-              <tr>
-                <td>Mary</td>
-                <td>Moe</td>
-                <td>mary@example.com</td>
-              </tr>
-              <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-              </tr>
-              <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-              </tr>
-              <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-              </tr>
-              <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-              </tr>
-              <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-              </tr>
-              <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-              </tr>
-           
             </tbody>
           </table>
 
@@ -130,13 +102,12 @@
           </ul>
        
           <div class="container mt-3" style="text-align:right;">
-            <a href="#" class="btn btn-secondary">Link Button</a>
-            <button type="button" class="btn btn-secondary">Button</button>
-            <input type="button" class="btn btn-secondary" value="Input Button">
-            <input type="submit" class="btn btn-secondary" value="Submit Button">
-            <input type="reset" class="btn btn-secondary" value="Reset Button">
+            <button type="button" class="btn btn-secondary"  onclick="location.href='/board/write';">글쓰기</button>
           </div>
           
     </div>
 </body>
 </html>
+<script>
+
+</script>

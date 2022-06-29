@@ -39,37 +39,29 @@
             <tbody>
               <tr class="table-secondary">
                 <th>제목</th>
-                <td colspan="5">부트스트랩을 배워봅시다</td>
+                <td colspan="5"><%=id_data.title%></td>
               </tr>
               <tr>
                 <th >작성자</th>
-                <td>홍길동</td>
+                <td><%=id_data.writer%></td>
                 <th >작성일</th>
-                <td>2021-12-27</td>
+                <td><%=id_data.wdate%></td>
                 <th  >조회수</th>
-                <td>12</td> 
+                <td><%=id_data.hit%></td> 
               </tr>
               <tr>
                 <th colspan="6"  class="table-secondary">내용</td>
               </tr>
               <tr>
                 <td colspan="6">
-                  내용을 써봅시다<br/>내용을 써봅시다<br/>내용을 써봅시다<br/>내용을 써봅시다<br/>
-                  내용을 써봅시다<br/>내용을 써봅시다<br/>내용을 써봅시다<br/>
+                  <%=id_data.contents%>
                 </td>
               </tr>
             </tbody>
           </table>
-
- 
-         
-       
           <div class="container mt-3" style="text-align:right;">
-            <a href="#" class="btn btn-secondary">Link Button</a>
-            <button type="button" class="btn btn-secondary">Button</button>
-            <input type="button" class="btn btn-secondary" value="Input Button">
-            <input type="submit" class="btn btn-secondary" value="Submit Button">
-            <input type="reset" class="btn btn-secondary" value="Reset Button">
+            <a href="#" class="btn btn-secondary" onclick="location.href='/board/delete/<%=id_data.id%>';">삭제</a>
+            <a href="#" class="btn btn-secondary" onclick="location.href='/board/list';">뒤로가기</a>
           </div>
           
     </div>
