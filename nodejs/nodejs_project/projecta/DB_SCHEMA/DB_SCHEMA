@@ -21,7 +21,7 @@ create table member(
     email varchar(40),
     phone varchar(40),
     wdate datetime,  -- 등록일
-    delyn char(1) default 'N' -- 기본값은 N으로 하고 탈퇴시 Y로,  강퇴시 Y로
+    delyn char(1) default 'N' -- 기본값은 N으로 하고 탈퇴시 Y로,  강퇴시 N로
 )
 
 insert into member(userid, password, username, email, phone, wdate)
