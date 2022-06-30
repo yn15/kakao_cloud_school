@@ -71,4 +71,18 @@ router.post("/register", (req, res)=>{
     res.send({result:"fail"});
   })
 })
+
+router.post("/duplicate", (req,res)=>{
+  var userid = req.body.userid;
+  var sql = `select count(*) cnt from member where userid='${userid}'`;
+  common.excuteDB(sql)
+  .then((result)=>{
+    if(result[0]["cnt"]==0){
+      res.send({result:"success"});
+    }else{
+      res.send({result:"fail"});
+    }
+  })
+})
+
 module.exports = router;

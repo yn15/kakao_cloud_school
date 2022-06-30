@@ -35,3 +35,18 @@ create table board(
     wdate datetime,
     hit int
 )
+
+db.person.insert({'name':'Jane', 'age':26})
+db.person.insert({'name':'홍길동', 'age':26, 'gender':'m'})
+
+db.createCollection("customSequence");
+db.customSequence.inser({_id:"hero", seq:0})
+db.customSequence.inser({_id:"member", seq:0})
+db.customSequence.inser({_id:"board", seq:0})
+db.customSequence.findAndModify(
+    {
+        query:{_id:"hero"},
+        update:{$inc:{seq:1}},
+        new:true
+    }
+)

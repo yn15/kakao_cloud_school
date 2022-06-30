@@ -13,8 +13,9 @@
   
 </head>
 <body>
-
+  <form id="myform" name="myform" method="post"></form>
 <nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <input type="hidden" id="idcheck" value="N"> 
   <ul class="navbar-nav">
     <li class="nav-item active">
       <a class="nav-link" href="/sms/list">게시판</a>
@@ -31,11 +32,11 @@
 <div class="container mt-3">
   <h1>회원가입</h1>
 
-  <form id="myform" name="myform" method="post">
+  
   <div class="input-group mb-3">
     <input type="text" class="form-control" placeholder="아이디" name="userid" id="userid">
     <div class="input-group-append">
-      <button class="btn btn-success" type="submit">중복체크</button>  
+      <button class="btn btn-success" type="button" id="btnIdCheck">중복체크</button>  
      </div>
   </div>
 
@@ -96,6 +97,33 @@ $(()=>{
         alert("회원가입실패");
         location.href="/";
       }
+    })
+  })
+  
+  $("#btnIdCheck").click(()=>{
+    if($("#userid").val().trim()==""){
+      alert("아이디를 입력하세요");
+      $("#userid").focus();
+      return false;
+    }
+
+    $.ajax({
+      url:"/member/duplicate",
+      method:"POST",
+      data:{"userid":$("#userid").val()},
+      dataTyep:"json"
+    })
+    .done((result)=>{
+      if(result.result=="success"){
+        alert("사용가능한 아이디입니다.");
+        $("#idcheck").val("Y");
+        $("#userid").prop("readonly", true);
+      }else{
+        alert("이미 사용중인 아이디입니다.");
+      }
+    })
+    .fail((a,b)=>{
+      console.log(b);
     })
   })
 })
