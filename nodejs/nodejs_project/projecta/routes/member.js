@@ -47,4 +47,28 @@ router.get("/logout", (req, res)=>{
   req.session.destroy();
   res.redirect("/");
 })
+
+router.get("/register", (req, res)=>{
+  res.render("./member/member_register");
+})
+
+router.post("/register", (req, res)=>{
+  var userid = req.body.userid;
+  var password = req.body.password;
+  var username = req.body.username;
+  var email = req.body.email;
+  var phone = req.body.phone;
+
+  let sql = `insert into member(userid, password, username, email, phone, wdate)
+              values(?, ?, ?, ?, ?, now())`;
+  var params =[userid, password, username, email, phone];
+  common.excuteDB(sql, params)
+  .then((result)=>{
+    res.send({result:"success"});
+  })
+  .catch((error)=>{
+    console.log(error);
+    res.send({result:"fail"});
+  })
+})
 module.exports = router;

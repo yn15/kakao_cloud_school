@@ -31,8 +31,9 @@
 <div class="container mt-3">
   <h1>회원가입</h1>
 
+  <form id="myform" name="myform" method="post">
   <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="아이디" name="user_id" id="user_id">
+    <input type="text" class="form-control" placeholder="아이디" name="userid" id="userid">
     <div class="input-group-append">
       <button class="btn btn-success" type="submit">중복체크</button>  
      </div>
@@ -51,28 +52,13 @@
   </div>
 
   <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="닉네임" name="nickname" id="nickname">
-  </div>
-
-  <div class="input-group mb-3">
     <input type="text" class="form-control" placeholder="email" name="email" id="email">
   </div>
 
   <div class="input-group mb-3">
     <input type="text" class="form-control" placeholder="전화번호" name="phone" id="phone">
   </div>
-
-  <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="우편번호" name="zipcode" id="zipcode">
-  </div>
-  <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="도로주소" name="address1" id="address1">
-  </div>
-
-  <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="상세주소" name="address2" id="address2">
-  </div>    
-  
+  </form>
 
 
   <!-- 다음 우편 api :주소체계 번지 -> 길  -->
@@ -81,9 +67,9 @@
 	 
 	  <div class="btn-group">
 	    
-       <button type="button" class="btn btn-primary" onclick="goWrite()">등록</button>&nbsp;&nbsp;
+       <button type="button" class="btn btn-primary" id="btnregister">등록</button>&nbsp;&nbsp;
       
-	    <button type="button" class="btn btn-primary" onclick="goCancel()">취소</button>&nbsp;&nbsp;
+	    <button type="button" class="btn btn-primary" id="btnCancel">취소</button>&nbsp;&nbsp;
 	  </div>
 	</div>
 </form>	
@@ -93,24 +79,24 @@
 </html>
 
 <script>
-function goWrite()
-{
-	var frm = document.form;
-	frm.action="/board/save";
-	frm.submit();
-}
-
-function goModify()
-{
-	var frm = document.form;
-	frm.action="/board/modify_save";
-	frm.submit();
-}
-
-function goCancel()
-{
-  var frm = document.form;
-	frm.action="/board/list";
-	frm.submit();
-}
+$(()=>{
+  $("#btnregister").click(()=>{
+    var params = $("#myform").serialize();
+    $.ajax({
+      url:"/member/register",
+      data:params,
+      method:"POST",
+      dataType:"json"
+    })
+    .done((result)=>{
+      if(result.result=="success"){
+        alert("회원가입성공");
+        location.href="/member/logon";
+      }else{
+        alert("회원가입실패");
+        location.href="/";
+      }
+    })
+  })
+})
 </script>
