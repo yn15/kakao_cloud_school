@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <% if(userInfo.userid==undefined || userInfo.userid==""){%>
+      <p>
+        <a href="/member/logon">로그온</a> &nbsp; &nbsp;
+        <a href="/member/register">회원가입</a>
+      </p>
+    <%}else{%>
+      <p>
+        <%=userInfo.userid%> <%=userInfo.username%> <%=userInfo.email%>
+        <a href="/member/logout">로그아웃</a>
+      </p>
+    <%}%>
+  </body>
+</html>
