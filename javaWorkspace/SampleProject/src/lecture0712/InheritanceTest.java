@@ -48,5 +48,9 @@ public class InheritanceTest extends Superclass{
 		System.out.println("10번입니다.");
 		Superclass obj = new InheritanceTest();
 		obj.myFunc();
+		// 객체에 대한 type이 상위 타입이라 할지라도
+		// 만약 overriding된 method가 하위에 존재한다면
+		// method는 overriding된 method를 사용한다
+		// 동적 바인딩(dynamic binding)
 	}
 }
