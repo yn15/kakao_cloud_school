@@ -1,3 +1,9 @@
+$(function() {
+	$("button").click(function (){
+		alert("아야!");
+	});
+})
+
 function getData(){
 	$('tbody').empty();
 	let promise = new Promise(function(resovle, reject){
@@ -73,7 +79,7 @@ function getData(){
                });
 			let actorTd = $('<td></td>').text(actor);
             tr.append(actorTd);
-            let deleteTd = $('<td></td>');
+            let deleteTd = $('<td><button type="button">삭제</button></td>');
             tr.append(deleteTd);
             $('tbody').append(tr);
 		}
@@ -81,6 +87,8 @@ function getData(){
 	
 	promise;
 }
+
+
 
 
 /*
