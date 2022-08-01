@@ -31,6 +31,25 @@ function getData(){
             let orderTd = $('<td></td>').text(e['rank']);
             tr.append(orderTd);
             let posterTd = $('<td></td>');
+            let posterImg = $("<img />");
+            $.ajax({
+                  url : 'https://dapi.kakao.com/v2/search/image',
+                  type: 'GET',
+                  data : { 
+                     query: e['movieNm']
+                  },
+				  headers: {
+					 Authorization: 'KakaoAK a9eadee4c24eac5ff2e59296f254f100'
+				  },
+                  dataType: 'json',
+                  success : function(imgResult){
+                     posterImg.attr('src', imgResult.documents[0].thumbnail_url);
+                  },
+                  error : function(){
+					 alert("이미지 검색 실패");
+                  }
+               });
+            posterTd.append(posterImg);
             tr.append(posterTd);
             let titleTd = $('<td></td>').text(e['movieNm']);
             tr.append(titleTd);
