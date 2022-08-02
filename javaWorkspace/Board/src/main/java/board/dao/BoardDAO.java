@@ -183,4 +183,34 @@ public class BoardDAO {
 		return result;
 	}
 
+
+	public ArrayList<Board> selectByKeyword(String keyword) throws Exception{
+		Connection con = ds.getConnection();
+		System.out.println("연결성공");
+		
+		String sql = "SELECT * FROM board WHERE bTitle LIKE ?";
+		PreparedStatement pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, "%" + keyword + "%");
+		ResultSet rs = pstmt.executeQuery();
+		
+		ArrayList<Board> list = new ArrayList<>();
+		while(rs.next()) {
+			Board board = new Board();
+			board.setbContents(rs.getString("bContents"));
+			board.setbDate(rs.getString("bDate"));
+			board.setbHits(rs.getInt("bHits"));
+			board.setbLikes(rs.getInt("bLikes"));
+			board.setbNumber(rs.getString("bNumber"));
+			board.setbTitle(rs.getString("bTitle"));
+			board.setUserID(rs.getString("userID"));
+			list.add(board);
+		}
+		
+		rs.close();
+		pstmt.close();
+		con.close();
+		
+		return list;
+	}
+
 }

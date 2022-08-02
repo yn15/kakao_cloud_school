@@ -22,6 +22,19 @@ public class BoardService {
 		return null;
 	}
 	
+	public ArrayList<Board> boardsearch(String keyword) {
+		try {
+			BoardDAO dao = new BoardDAO();
+			ArrayList<Board> board = dao.selectByKeyword(keyword);
+			return board;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+	
 	public Board board(String bNumber) {
 		try {
 			BoardDAO dao = new BoardDAO();
