@@ -19,20 +19,19 @@ export default function Form({todoData, setTodoData, value, setValue}) {
     }
 
     return (
-        <div>
-            <form style={{display: 'flex'}} onSubmit={handleSubmit}>
-            <input type="text" 
-                    name="todoInput" 
-                    style={{flex: '10', padding: '5px'}} 
-                    placeholder="새로운 할일을 입력하세요!" 
-                    value={value}
-                    onChange={handleChange}/>
-            <input type="submit" 
-                    value="입력"
-                    className='btn'
-                    style={{flex: '1'}}
-                    />
-            </form>
-        </div>
+        <form onSubmit={handleSubmit} className="flex pt-2">
+            <input type="text"
+                   name='todoItem'
+                   placeholder='새로운 할일을 입력하세요'
+                   className='w-full px-3 py-2 mr-4 text-gray-500 border rounded shadow'
+                   value={value}
+                   onChange={handleChange}
+            />
+            <input type='submit'
+                   value='입력'
+                   className='p-2 text-blue-400 border-blue-400 rounded hover:text-white hover:bg-blue-200'
+            />
+        </form>
+    
     )
 }
