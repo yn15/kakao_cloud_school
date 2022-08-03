@@ -12,16 +12,6 @@ export default class App extends Component{
           id: "1",
           title: "운동하기",
           completed: false
-        },
-        {
-          id: "2",
-          title: "공부하기",
-          completed: false
-        },
-        {
-          id: "3",
-          title: "밥 먹기",
-          completed: false
         }
       ],
       value: ""
@@ -36,11 +26,11 @@ export default class App extends Component{
     float: "right",
   }
 
-  getStyle = () => {
+  getStyle = (completed) => {
     return {
       padding: "20px",
       borderBottom: "1px #eee dotted",
-      textDecoration: "none"
+      textDecoration: completed? "line-through" :"none"
     }
   }
 
@@ -64,6 +54,31 @@ export default class App extends Component{
     // console.log(e.target.value);
     this.setState({value: e.target.value})
   }
+
+  handleSubmit = (e) => {
+    // 현재 submit event가 발생해서 처리
+    // default event처리 안하게 하기
+    e.preventDefault();
+    let newTodo = {
+      id: Date.now(), // unique한 값을 표현하기 위해
+      title: this.state.value,
+      completed: false
+    };
+
+    this.setState({todoData: [...this.state.todoData, newTodo], value: ""})
+  }
+
+  handleCompleteChange = (id) => {
+    // id에 대해 todoData의 completed상태값을 변경시켜야함
+    let newTodoData = this.state.todoData.map((data) => {
+      if(data.id === id) {
+        data.completed = !data.completed;
+      }
+      return data;
+    })
+
+    this.setState({todoData: newTodoData});
+  }
   
   render() {
     return (
@@ -72,15 +87,17 @@ export default class App extends Component{
           <div>
             <h1>오늘의 할 일</h1>
           </div>
+
           {this.state.todoData.map(data => (
-              <div style={this.getStyle()} key={data.id}>
-              <input type="checkbox" defaultChecked={false}/>
+              <div style={this.getStyle(data.completed)} key={data.id}>
+              <input type="checkbox" defaultChecked={false} onChange={() => {this.handleCompleteChange(data.id)}}/>
               {data.title}
               <button style={this.btnStyle}
                       onClick={()=>this.deleteClick(data.id)}>delete</button>
               </div>
           ))}
-          <form style={{display: 'flex'}}>
+
+          <form style={{display: 'flex'}} onSubmit={this.handleSubmit}>
             <input type="text" 
                    name="todoInput" 
                    style={{flex: '10', padding: '5px'}} 
