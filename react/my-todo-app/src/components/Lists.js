@@ -20,9 +20,26 @@ export default function Lists({todoData, setTodoData}) {
         setTodoData(newTodoData);
     }
 
+    const handleDrop = (e) => {
+        // e: event 객체, event에 대한 세부정보
+        // e.source: drag한 객체
+        // e.destination: drop한 객체
+        if(!e.destination) return;
+
+        const newTodoData = todoData;
+
+        // Drag된 요소를 삭제
+        const [reorder] = newTodoData.splice(e.source.index, 1);
+
+        // Drop되는 위치에 삽입
+        newTodoData.splice(e.destination.index, 0, reorder);
+
+        setTodoData(newTodoData);
+    }
+
     return (
         <div>
-            <DragDropContext>
+            <DragDropContext onDragEnd={handleDrop}>
                 <Droppable droppableId='to-do'>
                     {(provided) => (
                         <div {...provided.droppableProps} ref={provided.innerRef}>
