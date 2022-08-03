@@ -6,7 +6,7 @@ export default function Lists({todoData, setTodoData}) {
 
     const deleteClick = (id) => {
         console.log(id);
-        const newTodoData = todoData.filter(data => data.id != id);
+        const newTodoData = todoData.filter(data => data.id !== id);
         setTodoData(newTodoData);
     }
 
