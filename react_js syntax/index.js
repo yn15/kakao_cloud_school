@@ -82,7 +82,7 @@
 
 // 5. splice()
 // 배열의 기존 요소를 삭제하거나 교체하기에 적합한 메소드
-// rnans
+// 구문
 // array.splice(start 위치, 삭제 count, intem1, intem2, ...)
 const months = ['1월', '2월', '4월', '5월', '8월'];
 // months.splice(2, 0, '3월');
