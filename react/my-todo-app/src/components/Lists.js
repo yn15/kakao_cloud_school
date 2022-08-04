@@ -36,7 +36,8 @@ const Lists = React.memo(({deleteClick, todoData, setTodoData}) => {
                                     index={index}>
                                     {(provided, snapshot) => (
                                         // component 위치해야함
-                                        <List 
+                                        <List
+                                        index = {index}
                                         deleteClick={deleteClick}
                                         id={data.id}
                                         title={data.title}
@@ -44,7 +45,8 @@ const Lists = React.memo(({deleteClick, todoData, setTodoData}) => {
                                         todoData={todoData}
                                         setTodoData={setTodoData}
                                         provided={provided}
-                                        snapshot={snapshot}/>
+                                        snapshot={snapshot}
+                                        />
                                     )}
                                 </Draggable>
                             ))}
