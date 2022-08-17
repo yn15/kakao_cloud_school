@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mycom.board.mapper.BoardMapper">
+
+	<insert id="insertBoard" parameterType="board">
+		INSERT INTO board(name, passwd, title, content)
+		VALUES( #{name}, #{passwd}, #{title}, #{content})
+	</insert>
+	
+	<select id="listBoard" resultType="board">
+		SELECT no, title, name, regdate, hit 
+		FROM board 
+		ORDER BY no DESC
+	</select>
+</mapper>
