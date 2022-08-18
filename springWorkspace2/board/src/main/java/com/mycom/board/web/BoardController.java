@@ -114,7 +114,7 @@ public class BoardController {
 	
 	@GetMapping("/write300")
 	public String write300() {
-		for (int i = 1; i<=300; i++) {
+		for (int i = 1; i<=2147483647; i++) {
 			BoardDTO dto = new BoardDTO();
 			dto.setName("타잔" + i);
 			dto.setPasswd("1234");
