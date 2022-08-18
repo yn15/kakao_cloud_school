@@ -9,10 +9,11 @@
 		VALUES( #{name}, #{passwd}, #{title}, #{content})
 	</insert>
 	
-	<select id="listBoard" resultType="board">
+	<select id="listBoard" parameterType="map" resultType="board">
 		SELECT no, title, name, regdate, hit 
 		FROM board 
 		ORDER BY no DESC
+		LIMIT #{begin}, #{size}
 	</select>
 	
 	<select id="getBoard" parameterType="int" resultType="board">
@@ -39,4 +40,8 @@
 	<delete id="deleteBoard" parameterType="board">
 		DELETE FROM board WHERE no = #{no} AND passwd=#{passwd}
 	</delete>
+	
+	<select id="countBoard" resultType="int">
+		SELECT COUNT(*) FROM board
+	</select>
 </mapper>

@@ -1,5 +1,6 @@
 package com.mycom.board.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,8 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public List<BoardDTO> listBoard() {
-		return boardDAO.listBoard();
+	public List<BoardDTO> listBoard(HashMap<String, Integer> map) {
+		return boardDAO.listBoard(map);
 	}
 
 	@Override
@@ -44,6 +45,11 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public BoardDTO read4Update(int no) {
 		return boardDAO.getBoard(no);
+	}
+
+	@Override
+	public int countBoard() {
+		return boardDAO.countBoard();
 	}
 
 }

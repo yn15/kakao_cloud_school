@@ -1,5 +1,6 @@
 package com.mycom.board.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -22,8 +23,8 @@ public class BoardDAOImpl implements BoardDAO{
 	}
 
 	@Override
-	public List<BoardDTO> listBoard() {
-		return sqlSession.selectList(namespace+".listBoard");
+	public List<BoardDTO> listBoard(HashMap<String, Integer> map) {
+		return sqlSession.selectList(namespace+".listBoard", map);
 	}
 
 	@Override
@@ -44,6 +45,11 @@ public class BoardDAOImpl implements BoardDAO{
 	@Override
 	public int deleteBoard(BoardDTO dto) {
 		return sqlSession.delete(namespace+".deleteBoard", dto);
+	}
+
+	@Override
+	public int countBoard() {
+		return sqlSession.selectOne(namespace+".countBoard");
 	}
  
 }
