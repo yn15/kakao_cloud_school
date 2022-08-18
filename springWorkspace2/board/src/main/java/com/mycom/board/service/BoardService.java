@@ -9,6 +9,7 @@ public interface BoardService {
 	public void insertBoard(BoardDTO dto);
 	public List<BoardDTO> listBoard();
 	public BoardDTO readBoard(int no);
+	public BoardDTO read4Update(int no);
 	public int updateBoard(BoardDTO dto);
 	public int deleteBoard(BoardDTO dto);
 }

@@ -4,11 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>fail</title>
+<script>
+	alert("비밀번호가 틀려서 되돌아갑니다")
+	history.back();
+</script>
 </head>
 <body>
-	<h1>Index</h1>
-	<a href="writeform">글쓰기</a> <br>
-	<a href="list">리스트</a>
+
 </body>
 </html>

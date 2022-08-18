@@ -28,26 +28,22 @@ public class BoardDAOImpl implements BoardDAO{
 
 	@Override
 	public void updateHit(int no) {
-		// TODO Auto-generated method stub
-		
+		sqlSession.update(namespace+".updateHit", no);
 	}
 
 	@Override
 	public BoardDTO getBoard(int no) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne(namespace+".getBoard", no);
 	}
 
 	@Override
 	public int updateBoard(BoardDTO dto) {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.update(namespace+".updateBoard", dto);
 	}
 
 	@Override
 	public int deleteBoard(BoardDTO dto) {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.delete(namespace+".deleteBoard", dto);
 	}
  
 }

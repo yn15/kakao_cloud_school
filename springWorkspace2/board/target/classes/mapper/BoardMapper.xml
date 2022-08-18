@@ -14,4 +14,29 @@
 		FROM board 
 		ORDER BY no DESC
 	</select>
+	
+	<select id="getBoard" parameterType="int" resultType="board">
+		SELECT no, name, title, content, regdate, hit
+		FROM board 
+		WHERE no = ${no}
+	</select>
+	
+	<update id="updateHit" parameterType="board">
+		UPDATE board SET hit = hit+1 WHERE no = #{no}
+	</update>
+	
+	<update id="updateBoard" parameterType="board">
+		UPDATE board
+		SET
+			name=#{name},
+			title=#{title},
+			content=#{content},
+			modifydate=now()
+		WHERE no = #{no}
+		AND passwd=#{passwd}
+	</update>
+	
+	<delete id="deleteBoard" parameterType="board">
+		DELETE FROM board WHERE no = #{no} AND passwd=#{passwd}
+	</delete>
 </mapper>
