@@ -12,7 +12,7 @@
 <script>
 	$(function() {
 		$("#btn_update").on("click", function() {
-			location.href = "${root}/updateform/${b.no}";
+			location.href = "${root}/updateform/${b.no}/${pg}";
 		})
 		
 		$("#del_span").hide();
@@ -71,6 +71,7 @@
 					<input type="button" id="btn_delete" value="삭제">
 					<span id="del_span">
 						<input type="hidden" name="no" value="${b.no}">
+						<input type="hidden" name="pg" value="${pg}">
 						비밀번호 : <input type="password" name="passwd" id="passwd" size="12" maxlength="20">
 						<input type="button" id="btn_del" value="Del">
 						<input type="button" id="btn_cancel" value="Cancel">

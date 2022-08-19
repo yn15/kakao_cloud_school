@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mycom.board.domain.BoardDTO;
 import com.mycom.board.service.BoardService;
@@ -57,7 +58,7 @@ public class BoardController {
 		int max = count - (pg-1) * size; // 현재 페이지의 가장 큰 수
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		map.put("begin", begin);
-		map.put("size", size);
+		map.put("size", size); 
 		List<BoardDTO> list = boardService.listBoard(map);
 //		List<BoardDTO> list = boardService.listBoard();
 		log.info("list() list="+list);
@@ -73,48 +74,51 @@ public class BoardController {
 	}
 	
 	// http://localhost:8080/board/read/no
-	@GetMapping("/read/{no}")
-	public String read(@PathVariable(value = "no") int no, Model model) {
+	@GetMapping("/read/{no}/{pg}")
+	public String read(@PathVariable(value = "no") int no, @PathVariable(value = "pg") int pg, Model model) {
+		log.info("read() no=" + no + ", pg=" + pg);
 		BoardDTO dto = boardService.readBoard(no);
 		log.info("read() dto="+dto);
 		model.addAttribute("b", dto);
+		model.addAttribute("pg",pg);
 		return "read";
 	}
 	
-	@GetMapping("/updateform/{no}")
-	public String updateform(@PathVariable(value="no") int no, Model model) {
+	@GetMapping("/updateform/{no}/{pg}")
+	public String updateform(@PathVariable(value="no") int no, @PathVariable(value = "pg") int pg, Model model) {
 		BoardDTO dto = boardService.read4Update(no);
 		log.info("updateform() dto=" +dto);
 		model.addAttribute("b", dto);
+		model.addAttribute("pg",pg);
 		return "updateform";
 	}
 	
 	@PostMapping("/update")
-	public String update(BoardDTO dto) {
+	public String update(BoardDTO dto, @RequestParam(value="pg", defaultValue="1") int pg) {
 		log.info("update() dto=" + dto);
 		int ok = boardService.updateBoard(dto);
 		log.info("update() ok=" + ok);
 		if(ok==0) {
 			return "fail";
 		} else {
-			return "redirect:/list";
+			return "redirect:/list/"+pg;
 		}
 	}
 	
 	@PostMapping("/delete")
-	public String delete(BoardDTO dto) {
+	public String delete(BoardDTO dto, @RequestParam(value="pg", defaultValue="1") int pg) {
 		log.info("delete() dto=" + dto);
 		int ok = boardService.deleteBoard(dto);
 		if(ok==0) {
 			return "fail";
 		} else {
-			return "redirect:/list";
+			return "redirect:/list/"+pg;
 		}
 	}
 	
 	@GetMapping("/write300")
 	public String write300() {
-		for (int i = 1; i<=2147483647; i++) {
+		for (int i = 1; i<=300; i++) {
 			BoardDTO dto = new BoardDTO();
 			dto.setName("타잔" + i);
 			dto.setPasswd("1234");

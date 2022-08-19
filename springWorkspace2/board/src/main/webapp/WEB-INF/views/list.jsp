@@ -23,7 +23,7 @@
 	<c:forEach var="b" items="${list}">
 		<tr>
 			<td>${b.no}</td>
-			<td><a href="${root}/read/${b.no}">${b.title}</a></td>
+			<td><a href="${root}/read/${b.no}/${pg}"/>${b.title}</a></td>
 			<td>${b.name}</td>
 			<td><fmt:formatDate value="${b.regdate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
 			<td>${b.hit}</td>

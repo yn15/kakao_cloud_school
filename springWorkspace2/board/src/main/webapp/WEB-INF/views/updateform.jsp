@@ -42,9 +42,10 @@
 <form action="${root}/update" method="post" name="frm" id="updateform">
 	<table style="width:500px" border="1">
 		<tr>
-			<th>제목</th>
+			<th width="100">제목</th>
 			<td>
 				<input type="hidden" name="no" value="${b.no}">
+				<input type="hidden" name="pg" value="${pg}">
 				<input name="title" id="title" value="${b.title}" size="30" maxlength="100">
 			</td>
 		</tr>
