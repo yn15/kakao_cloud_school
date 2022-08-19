@@ -103,7 +103,7 @@ public class BoardController {
 		} else {
 			return "redirect:/list/"+pg;
 		}
-	}
+}
 	
 	@PostMapping("/delete")
 	public String delete(BoardDTO dto, @RequestParam(value="pg", defaultValue="1") int pg) {
