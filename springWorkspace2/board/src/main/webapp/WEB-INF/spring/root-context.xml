@@ -38,5 +38,27 @@
 	
 	<context:component-scan base-package="com.mycom.board.service" />
 	<context:component-scan base-package="com.mycom.board.dao" />
-
+	
+	<!-- AOP 트랜잭션 설정 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="insert*" rollback-for="Exception" />
+			<tx:method name="update*" rollback-for="Exception" />
+			<tx:method name="delete*" rollback-for="Exception" />
+		</tx:attributes>
+	</tx:advice>
+	
+	<aop:config proxy-target-class="true">
+		<aop:pointcut expression="execution(public * com.mycom.board.service.*Service*.*(..))" id="serviceOperation"/>
+		<aop:advisor id="transactionAdvisor" advice-ref="txAdvice" 
+			pointcut-ref="serviceOperation"/>
+	</aop:config>
+	
+	<!-- ~.java에 @Transactional 사용 가능 설정 -->
+	<tx:annotation-driven />
 </beans>

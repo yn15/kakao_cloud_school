@@ -44,4 +44,5 @@
 	<select id="countBoard" resultType="int">
 		SELECT COUNT(*) FROM board
 	</select>
+
 </mapper>

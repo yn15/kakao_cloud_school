@@ -6,13 +6,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인 성공</title>
 </head>
 <body>
-	<h1>Index</h1>
-	<a href="${root}writeform">글쓰기</a> <br>
-	<a href="${root}list">리스트</a><br>
-	<a href="${root}/member/join">회원 가입</a><br>
-	<a href="${root}/member/loginform">로그인</a>
+	<h1>로그인 성공</h1>
+	${id}님 어서오세요! <br>
+	<a href="${root}/member/logout">로그아웃</a><br>
+	<a href="${root}/member/updateform">회원 정보 수정</a><br>
+	<a href="${root}/member/deleteform">회원 탈퇴</a><br>
 </body>
 </html>
