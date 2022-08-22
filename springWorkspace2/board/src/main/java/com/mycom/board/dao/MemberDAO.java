@@ -30,4 +30,8 @@ public class MemberDAO {
 		return sqlSession.update(namespace+".updateMember", dto);
 	}
 
+	public int deleteMember(MemberDTO dto) {
+		return sqlSession.update(namespace+".deleteMember", dto);
+	}
+
 }

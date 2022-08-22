@@ -36,7 +36,7 @@ public class MemberController {
 		if(ok == 0) {
 			return "/member.join_fail";
 		}else {
-			return "/member/joinok";
+			return "redirect:/member/loginform";
 		}
 	}
 	
@@ -100,7 +100,25 @@ public class MemberController {
 	}
 	
 	@GetMapping("/deleteform")
-	public String deleteform() {
-		return null;
+	public String deleteform(HttpServletRequest request, Model model) {
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("id");
+		model.addAttribute("id", id);
+		return "member/deleteform";
+	}
+	
+	@PostMapping("/delete")
+	public String delete(HttpServletRequest request, MemberDTO dto) {
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("id");
+		log.info("delete() id=" + id);
+		log.info("delete() dto=" + dto);
+		int ok = memberService.deleteMember(dto);
+		if(ok == 0) {
+			return "member/delete_fail";
+		}else {
+			session.invalidate();
+			return "redirect:/";
+		}
 	}
 }

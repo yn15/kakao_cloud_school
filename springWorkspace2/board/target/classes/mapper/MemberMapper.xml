@@ -27,4 +27,13 @@
 			regdate=now()
 		WHERE id=#{id} AND passwd=#{passwd}
 	</update>
+	
+	<update id="deleteMember" parameterType="member">
+		UPDATE member
+		SET
+			del_yn = 'Y'
+		WHERE
+			id = #{id} AND
+			passwd = #{passwd}
+	</update>
 </mapper>
