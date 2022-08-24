@@ -26,11 +26,12 @@ public class NetworkClient  {
     }
 
     // 서비스 종료시 호출
-    @PostConstruct
+
     public void disConnect() {
         System.out.println("close: " + url);
     }
 
+    @PostConstruct
     public void init() throws Exception {
         System.out.println("NetworkClient.init");
         connect();
